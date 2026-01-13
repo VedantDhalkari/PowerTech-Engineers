@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="POWERTECH ENGINEERS - Licensed Electrical Contractors in Pune. Professional electrical services, solar power solutions, and industrial contracting.">
+    <title>POWERTECH ENGINEERS - Licensed Electrical Contractors Pune</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Glass Navigation Bar -->
+    <nav class="glass-navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="POWERTECH ENGINEERS Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-primary">POWERTECH</span>
+                    <span class="logo-secondary">ENGINEERS</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary">Get a Quote</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-grid"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-certificate"></i>
+                <span>Licensed & Certified Electrical Contractors</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Empowering Infrastructure with <span class="highlight">Precision</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Licensed Electrical Contractors in Pune | Vadagaon Budruk
+            </p>
+            
+            <p class="hero-description">
+                Professional electrical services, solar energy solutions, and comprehensive power management for residential, commercial, and industrial projects across Maharashtra.
+            </p>
+            
+            <div class="hero-actions">
+                <button class="btn btn-yellow" onclick="openContactModal()">
+                    <i class="fas fa-calendar-check"></i>
+                    Request Site Visit
+                </button>
+                <a href="#services" class="btn btn-outline">
+                    View Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="hero-contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span class="contact-label">24/7 Support</span>
+                        <a href="tel:+919876543210" class="contact-value">+91 98765 43210</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span class="contact-label">Email Us</span>
+                        <span class="contact-value">info@powertechengineers.in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">99.8%</span>
+                    <span class="stat-label">Uptime Record</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Safety Compliance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Core Services</span>
+                <h2 class="section-title">Comprehensive Electrical Solutions</h2>
+                <p class="section-description">
+                    Backed by technical expertise, regulatory compliance, and 15+ years of industry experience
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card glass-card" data-service="electrical-connections">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="service-title">Electrical Connections & Construction</h3>
+                    <p class="service-description">
+                        Professional electrical infrastructure setup for residential, commercial, and industrial projects
+                    </p>
+                    <button class="service-cta">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card glass-card" data-service="solar-power">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3 class="service-title">Solar Power Plant Services</h3>
+                    <p class="service-description">
+                        End-to-end solar energy solutions with government subsidies and net metering
+                    </p>
+                    <button class="service-cta">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card glass-card" data-service="earthing">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Earthing Solutions</h3>
+                    <p class="service-description">
+                        Advanced earthing and lightning protection systems for safety compliance
+                    </p>
+                    <button class="service-cta">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card glass-card" data-service="panels">
+                    <div class="service-icon">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3 class="service-title">Electrical Panels & Switchgears</h3>
+                    <p class="service-description">
+                        Supply and service of LT/HT panels, MCC, PCC, APFC, and control systems
+                    </p>
+                    <button class="service-cta">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card glass-card" data-service="metering">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="service-title">Electric Meter Fitting</h3>
+                    <p class="service-description">
+                        Authorized meter installation and liaison with electricity boards
+                    </p>
+                    <button class="service-cta">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card glass-card" data-service="transformers">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="service-title">Transformers & Substations</h3>
+                    <p class="service-description">
+                        Transformer installation, maintenance, and substation setup services
+                    </p>
+                    <button class="service-cta">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose POWERTECH?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon blue">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certified Excellence</h3>
+                    <p>Licensed contractors with full KSEI/KSEB compliance and ISO certification</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon green">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>100% safety compliance with rigorous protocols and quality standards</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon yellow">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Experienced engineers and technicians with 15+ years industry expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications-section">
+        <div class="container">
+            <h2 class="section-title light">Certifications & Compliance</h2>
+            <div class="cert-badges">
+                <div class="cert-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Licensed Electrical Contractor</span>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>KSEI Registered</span>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>KSEB Approved</span>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>ISO 9001:2015 Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title light">Get in Touch</h2>
+                    <p class="contact-intro">Ready to power your project? Contact us for a free consultation.</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Office Address</h4>
+                                <p>48/3/C/24/B5, Dhabadi, Vadagaon Budruk<br>Pune, Maharashtra 411041</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <span>info@powertechengineers.in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 POWERTECH ENGINEERS. All rights reserved. Licensed Electrical Contractor</p>
+        </div>
+    </footer>
+
+    <!-- Side Drawer (Service Details Modal) -->
+    <div class="side-drawer" id="sideDrawer">
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <div class="drawer-panel" id="drawerPanel">
+            <div class="drawer-header">
+                <div class="drawer-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="drawer-title-wrap">
+                    <h2 id="drawerTitle">Service Details</h2>
+                    <p id="drawerSubtitle">Professional Solutions</p>
+                </div>
+                <button class="drawer-close" id="drawerClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="drawer-content">
+                <div class="drawer-section">
+                    <h3><i class="fas fa-check-circle"></i> Technical Overview</h3>
+                    <p id="drawerDescription">Detailed service information will appear here.</p>
+                </div>
+                
+                <div class="drawer-section">
+                    <h3><i class="fas fa-cogs"></i> Our Process</h3>
+                    <div class="process-steps" id="drawerProcess"></div>
+                </div>
+                
+                <div class="drawer-cta">
+                    <div class="cta-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>Compliance & Standards</strong>
+                            <p>All work performed per IS standards with KSEI/KSEB approval</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" onclick="alert('Quote request submitted! Our team will contact you within 2 hours.')">
+                        <i class="fas fa-paper-plane"></i>
+                        Request Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+            <span class="pulse-ring"></span>
+        </button>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <h4>PowerBot</h4>
+                    <p><span class="status-dot"></span> Online Now</p>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-message">
+                    <p>Welcome to <strong>POWERTECH ENGINEERS</strong></p>
+                    <p>How can we assist you today?</p>
+                </div>
+            </div>
+            
+            <div class="chatbot-options" id="chatbotOptions">
+                <button class="chat-option" data-action="service">
+                    <i class="fas fa-wrench"></i> Service Inquiry
+                </button>
+                <button class="chat-option" data-action="solar">
+                    <i class="fas fa-solar-panel"></i> Solar Consultation
+                </button>
+                <button class="chat-option" data-action="visit">
+                    <i class="fas fa-calendar-alt"></i> Request Site Visit
+                </button>
+                <button class="chat-option" data-action="emergency">
+                    <i class="fas fa-exclamation-triangle"></i> Emergency Support
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency FAB -->
+    <a href="tel:+919876543210" class="emergency-fab">
+        <i class="fas fa-phone-alt"></i>
+        <span class="fab-pulse"></span>
+        <span class="fab-label">Emergency</span>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
