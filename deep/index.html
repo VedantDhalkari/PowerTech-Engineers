@@ -374,6 +374,8 @@
         </div>
     </div>
 
+    
+
     <!-- Chatbot Widget -->
     <div class="chatbot-widget" id="chatbot">
         <button class="chatbot-toggle" id="chatbotToggle">
@@ -419,6 +421,15 @@
         </div>
     </div>
 
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'http://localhost:5678/webhook/28db2929-9c10-41cc-bc73-cea331a5dca3/chat'
+	});
+</script>
+
     <!-- Emergency FAB -->
     <a href="tel:+919876543210" class="emergency-fab">
         <i class="fas fa-phone-alt"></i>
@@ -429,4 +440,5 @@
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
+
 </html>
