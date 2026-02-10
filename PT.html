@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWERTECH ENGINEERS |  Electrical Solutions & Contractors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Color Palette */
+            --electric-blue: #0066FF;
+            --safety-yellow: #f05f17;
+            --graphite-black: #1A1A1A;
+            --industrial-gray: #2D3748;
+            --light-gray: #F5F7FA;
+            --pure-white: #FFFFFF;
+            --success-green: #10B981;
+            --emergency-red: #EF4444;
+            
+            /* Spacing */
+            --section-padding: 80px 5%;
+            --mobile-padding: 60px 5%;
+            
+            /* Shadows */
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 12px 40px rgba(0, 102, 255, 0.15);
+            --elevated-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            
+            /* Typography */
+            --font-primary: 'Inter', sans-serif;
+            --font-secondary: 'Space Grotesk', sans-serif;
+        }
+
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--industrial-gray);
+            background-color: var(--pure-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: var(--section-padding);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 16px;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-primary);
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--electric-blue), #0052CC);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.35);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--electric-blue);
+            border: 2px solid var(--electric-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 102, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .btn-emergency {
+            background: linear-gradient(135deg, var(--emergency-red), #DC2626);
+            color: white;
+            font-weight: 700;
+            padding: 16px 36px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px 0;
+            transition: all var(--transition-smooth);
+        }
+
+        .header.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--electric-blue), #0052CC);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-text {
+            font-family: var(--font-secondary);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--graphite-black);
+        }
+
+        .logo-text span {
+            color: var(--electric-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--industrial-gray);
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--electric-blue);
+        }
+
+        .nav-link.active {
+            color: var(--electric-blue);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--electric-blue);
+            border-radius: 2px;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .emergency-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--emergency-red);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--industrial-gray);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center right/cover;
+            opacity: 0.1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            color: var(--graphite-black);
+        }
+
+        .hero-content h1 span {
+            color: var(--electric-blue);
+            position: relative;
+        }
+
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 214, 0, 0.3);
+            z-index: -1;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--industrial-gray);
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--electric-blue);
+            font-family: var(--font-secondary);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--industrial-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .floating-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--elevated-shadow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .floating-card h3 {
+            color: var(--graphite-black);
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .service-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 102, 255, 0.08);
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .service-pill i {
+            color: var(--electric-blue);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--graphite-black);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--industrial-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* UI Card System - Frosted Glass */
+        .service-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            padding: 40px 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--safety-yellow));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(255, 214, 0, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: var(--electric-blue);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--graphite-black);
+        }
+
+        .service-card p {
+            color: var(--industrial-gray);
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        /* ===== PROJECTS SHOWCASE ===== */
+        .projects {
+            background-color: var(--pure-white);
+        }
+
+        .project-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-btn.active {
+            background: var(--electric-blue);
+            color: white;
+            border-color: var(--electric-blue);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-smooth);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 240px;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 25px;
+            background: white;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-tag {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--electric-blue);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ===== COMPLIANCE SECTION ===== */
+        .compliance {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .compliance .section-header h2 {
+            color: white;
+        }
+
+        .compliance .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform var(--transition-smooth);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-icon {
+            font-size: 40px;
+            color: var(--safety-yellow);
+            margin-bottom: 20px;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--graphite-black);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--electric-blue);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--graphite-black);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-md);
+            font-family: var(--font-primary);
+            font-size: 16px;
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        /* ===== CHATBOT ===== */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--electric-blue), #0052CC);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--elevated-shadow);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 600px;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--elevated-shadow);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--graphite-black), #2d3748);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chatbot-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--safety-yellow);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--graphite-black);
+        }
+
+        .chatbot-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .chat-bot {
+            align-self: flex-start;
+            background: rgba(0, 0, 0, 0.05);
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-user {
+            align-self: flex-end;
+            background: var(--electric-blue);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .chat-option {
+            padding: 15px;
+            background: rgba(0, 102, 255, 0.08);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: background var(--transition-fast);
+            font-weight: 500;
+            border: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .chat-option:hover {
+            background: rgba(0, 102, 255, 0.15);
+        }
+
+        .chatbot-footer {
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--graphite-black);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: var(--font-secondary);
+        }
+
+        .footer-logo span {
+            color: var(--electric-blue);
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .social-icon:hover {
+            background: var(--electric-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-content h1 {
+                font-size: 42px;
+            }
+            
+            .section-header h2 {
+                font-size: 36px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 30px;
+                transition: left var(--transition-smooth);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .services-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-padding {
+                padding: var(--mobile-padding);
+            }
+            
+            .chatbot-window {
+                width: calc(100vw - 40px);
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            
+            .section-header h2 {
+                font-size: 30px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">PE</div>
+                <div class="logo-text">POWERTECH<span>ENGINEERS</span></div>
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#compliance" class="nav-link">Compliance</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-cta">
+                <div class="emergency-badge">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Emergency: 1800-123-4567</span>
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book Site Visit
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section-padding" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Premium Electrical Solutions <span>Engineered for Excellence</span></h1>
+                    <p>POWERTECH ENGINEERS is a licensed electrical contracting company providing comprehensive power solutions, solar installations, KSEB liaisoning, and advanced electrical systems for industrial, commercial, and residential projects across Pune and Maharashtra.</p>
+                    
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" style="margin-right: 15px;">
+                            <i class="fas fa-bolt"></i> Get Free Consultation
+                        </button>
+                        <button class="btn btn-emergency">
+                            <i class="fas fa-phone-alt"></i> Emergency Call
+                        </button>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">850+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label">Emergency Support</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <h3>Our Core Services</h3>
+                        <div>
+                            <div class="service-pill">
+                                <i class="fas fa-solar-panel"></i> Solar Power Plants
+                            </div>
+                            <div class="service-pill">
+                                <i class="fas fa-bolt"></i> Electrical Construction
+                            </div>
+                            <div class="service-pill">
+                                <i class="fas fa-tachometer-alt"></i> Meter Fitting
+                            </div>
+                            <div class="service-pill">
+                                <i class="fas fa-trailer"></i> Transformers
+                            </div>
+                            <div class="service-pill">
+                                <i class="fas fa-file-contract"></i> KSEB Liaisoning
+                            </div>
+                            <div class="service-pill">
+                                <i class="fas fa-drafting-compass"></i> Electrical Design
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Electrical Services</h2>
+                <p>From residential wiring to industrial power systems, we provide end-to-end electrical solutions with certified expertise and compliance.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Power Plant Services</h3>
+                    <p>Complete solar energy solutions including design, installation, commissioning, and maintenance for residential, commercial, and industrial applications.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Connections & Construction</h3>
+                    <p>Turnkey electrical construction projects with complete design, installation, testing, and commissioning services.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Electric Meter Fitting</h3>
+                    <p>Professional meter installation, testing, calibration, and KSEB/KSEI compliance services for accurate energy measurement.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>KSEI & KSEB Liaisoning</h3>
+                    <p>Complete documentation, approval, and coordination services for electrical connections, load enhancement, and compliance.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Electrical Designing & Consultancy</h3>
+                    <p>Advanced electrical system design, load analysis, safety audits, and technical consultancy for optimal power management.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-trailer"></i>
+                    </div>
+                    <h3>Transformers & Substations</h3>
+                    <p>Supply, installation, and maintenance of transformers, switchgears, and complete substation solutions.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section-padding" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Electrical Projects</h2>
+                <p>Showcasing our expertise across industrial, commercial, and residential electrical installations.</p>
+            </div>
+            
+            <div class="project-filter">
+                <button class="filter-btn active">All Projects</button>
+                <button class="filter-btn">Industrial</button>
+                <button class="filter-btn">Commercial</button>
+                <button class="filter-btn">Residential</button>
+                <button class="filter-btn">Solar Installations</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Industrial</span>
+                            <span class="project-tag">Transformer</span>
+                            <span class="project-tag">Substation</span>
+                        </div>
+                        <h3>Automotive Plant Power System</h3>
+                        <p>Complete 11kV substation with transformer installation and distribution network for automotive manufacturing unit.</p>
+                        <div style="margin-top: 15px; color: var(--electric-blue); font-weight: 600;">
+                            <i class="fas fa-calendar"></i> Completed: March 2023
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Commercial</span>
+                            <span class="project-tag">Solar</span>
+                            <span class="project-tag">Renewable</span>
+                        </div>
+                        <h3>Shopping Complex Solar Installation</h3>
+                        <p>500kW rooftop solar power plant with net metering and complete electrical integration for commercial complex.</p>
+                        <div style="margin-top: 15px; color: var(--electric-blue); font-weight: 600;">
+                            <i class="fas fa-calendar"></i> Completed: January 2024
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Residential</span>
+                            <span class="project-tag">Wiring</span>
+                            <span class="project-tag">Smart Home</span>
+                        </div>
+                        <h3>Luxury Apartment Electrical System</h3>
+                        <p>Complete electrical wiring, smart home automation, and safety systems for premium residential complex.</p>
+                        <div style="margin-top: 15px; color: var(--electric-blue); font-weight: 600;">
+                            <i class="fas fa-calendar"></i> Completed: November 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="compliance section-padding" id="compliance">
+        <div class="container">
+            <div class="section-header">
+                <h2>Licenses & Certifications</h2>
+                <p>We operate with full compliance to all electrical safety standards and government regulations.</p>
+            </div>
+            
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Class A Electrical License</h3>
+                    <p>Government approved electrical contractor license for unlimited contract value.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ISO 9001:2015 Certified</h3>
+                    <p>Quality management system certification for electrical services.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-file-certificate"></i>
+                    </div>
+                    <h3>KSEB Authorized Contractor</h3>
+                    <p>Approved contractor for KSEB electrical works and liaisoning.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Licensed Electrical Engineers</h3>
+                    <p>All projects supervised by certified electrical engineers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Our Electrical Experts</h2>
+                <p>Get in touch for free consultation, site visits, or emergency electrical services.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Office Address</h4>
+                                <p>48/3/C/24/B5, Dhabadi, Vadagaon Budruk, Pune, Maharashtra 411041</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Contact Numbers</h4>
+                                <p>General: +91 98765 43210</p>
+                                <p>Emergency: 1800-123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@powertechengineers.com</p>
+                                <p>projects@powertechengineers.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Saturday: 8:00 AM - 8:00 PM</p>
+                                <p>Emergency Services: 24/7 Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 25px;">Request a Quote</h3>
+                    
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="Enter your 10-digit mobile number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" class="form-input" placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="service">Service Required *</label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Select a service</option>
+                                <option value="solar">Solar Power Plant</option>
+                                <option value="construction">Electrical Construction</option>
+                                <option value="meter">Meter Fitting</option>
+                                <option value="liaisoning">KSEB Liaisoning</option>
+                                <option value="design">Electrical Design</option>
+                                <option value="transformer">Transformers & Substations</option>
+                                <option value="other">Other Electrical Service</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">Project Details</label>
+                            <textarea id="message" class="form-textarea" rows="4" placeholder="Briefly describe your electrical requirement..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-logo">PE</div>
+                <div>
+                    <h4 style="margin-bottom: 5px;">POWERTECH Assistant</h4>
+                    <p style="font-size: 12px; opacity: 0.8;">We're here to help 24/7</p>
+                </div>
+            </div>
+            
+            <div class="chatbot-body" id="chatbotBody">
+                <div class="chat-message chat-bot">
+                    Welcome to POWERTECH ENGINEERS! ⚡<br><br>
+                    We provide professional electrical services, contracting, and advanced power solutions.<br><br>
+                    How can I assist you today?
+                </div>
+                
+                <div class="chat-options">
+                    <div class="chat-option" data-option="service">
+                        <i class="fas fa-bolt"></i> Service Inquiry
+                    </div>
+                    <div class="chat-option" data-option="solar">
+                        <i class="fas fa-solar-panel"></i> Solar Consultation
+                    </div>
+                    <div class="chat-option" data-option="visit">
+                        <i class="fas fa-calendar-check"></i> Book Site Visit
+                    </div>
+                    <div class="chat-option" data-option="emergency">
+                        <i class="fas fa-phone-alt"></i> Emergency Support
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-footer">
+                <input type="text" class="chat-input" placeholder="Type your message...">
+                <button class="btn btn-primary" style="padding: 12px 20px;">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">POWERTECH<span>ENGINEERS</span></div>
+                    <p class="footer-description">
+                        Licensed electrical contractors providing comprehensive power solutions, solar installations, and electrical services across Pune and Maharashtra with 15+ years of expertise.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-services">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Electrical Construction</a>
+                        <a href="#" class="footer-link">Solar Power Plants</a>
+                        <a href="#" class="footer-link">Meter Fitting</a>
+                        <a href="#" class="footer-link">Transformers</a>
+                        <a href="#" class="footer-link">Electrical Design</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#services" class="footer-link">Services</a>
+                        <a href="#projects" class="footer-link">Projects</a>
+                        <a href="#compliance" class="footer-link">Compliance</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <div class="footer-links">
+                        <div class="footer-link">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                            Pune, Maharashtra
+                        </div>
+                        <div class="footer-link">
+                            <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>
+                            1800-123-4567
+                        </div>
+                        <div class="footer-link">
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                            info@powertech.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 POWERTECH ENGINEERS. All rights reserved.
+                </div>
+                <div class="footer-links" style="flex-direction: row; gap: 20px;">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Safety Standards</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Chatbot Toggle
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Chatbot Options
+        document.querySelectorAll('.chat-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const optionType = this.getAttribute('data-option');
+                const chatbotBody = document.getElementById('chatbotBody');
+                
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message chat-user';
+                userMessage.textContent = this.textContent.trim();
+                chatbotBody.appendChild(userMessage);
+                
+                // Bot response based on option
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message chat-bot';
+                
+                let response = '';
+                switch(optionType) {
+                    case 'service':
+                        response = 'Great! Please select the electrical service you need: \n1. Solar Power Plant \n2. Electrical Construction \n3. Meter Fitting \n4. KSEB Liaisoning \n5. Other Electrical Service';
+                        break;
+                    case 'solar':
+                        response = 'Perfect! Our solar experts will contact you within 30 minutes. Please share your contact number or email for consultation.';
+                        break;
+                    case 'visit':
+                        response = 'I can help you book a site visit with our electrical engineer. Please provide your address and preferred date/time.';
+                        break;
+                    case 'emergency':
+                        response = '⚠️ EMERGENCY SUPPORT: Call our 24/7 helpline at 1800-123-4567 or share your location for immediate assistance.';
+                        break;
+                }
+                
+                botMessage.textContent = response;
+                chatbotBody.appendChild(botMessage);
+                
+                // Scroll to bottom
+                chatbotBody.scrollTop = chatbotBody.scrollHeight;
+                
+                // Remove options after selection
+                document.querySelector('.chat-options').style.display = 'none';
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your ${service} request has been submitted. Our electrical expert will contact you within 30 minutes.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Project Filter
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // In a real implementation, this would filter the projects
+                // For demo, we'll just show an alert
+                const filterText = this.textContent;
+                console.log(`Filtering projects by: ${filterText}`);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
