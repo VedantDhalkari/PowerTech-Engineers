@@ -1,179 +1,1038 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POWERTECH ENGINEERS | Premium Electrical Contractors | Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Licensed electrical contractors providing industrial-grade solar power plants, KSEB liaisoning, and high-voltage solutions in Pune, Maharashtra.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+        content="POWERTECH ENGINEERS – Government Licensed Electrical Contractor & Consultant in Pune. Specializing in Rooftop Solar, EV Charging, MSEDCL Liasoning, HT/LT Installation, CCTV, and more. 12+ years experience." />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E37220",
+                        secondary: "#003E6F",
+                        accent: "#E1E1E2",
+                    },
+                    borderRadius: {
+                        button: "8px",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        outfit: ["Outfit", "sans-serif"],
+                    },
+                    boxShadow: {
+                        glass: "0 4px 20px rgba(0, 0, 0, 0.05)",
+                    },
+                },
+            },
+        };
+    </script>
+
+    <title>POWERTECH ENGINEERS – Gov. Lic. Electrical Contractor &amp; Consultant, Pune</title>
+
+    <style>
+        :root {
+            --pt-navy: #003E6F;
+            --pt-orange: #E37220;
+            --pt-white: #FFFFFF;
+            --pt-gray: #E1E1E2;
+            --pt-navy-dark: #002a4d;
+            --pt-orange-light: rgba(227, 114, 32, 0.12);
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* ── Hamburger ── */
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            border-radius: 15px;
+            background-color: var(--pt-navy);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .line-1 {
+            transform: rotate(45deg) translate(10px, 6px);
+        }
+
+        .hamburger.active .line-2 {
+            opacity: 0;
+        }
+
+        .hamburger.active .line-3 {
+            transform: rotate(-45deg) translate(6px, -3px);
+        }
+
+        /* ── Scroll Animate ── */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── 3D Electric Bolt Hero ── */
+        @keyframes bolt-pulse {
+
+            0%,
+            100% {
+                opacity: 0.15;
+                transform: scale(1) rotate(-5deg);
+            }
+
+            50% {
+                opacity: 0.35;
+                transform: scale(1.08) rotate(5deg);
+            }
+        }
+
+        @keyframes float-up {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes bounce-y {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes particle {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-60px) scale(0.3);
+            }
+        }
+
+        .hero-bolt-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-bolt-bg svg {
+            width: min(600px, 80vw);
+            opacity: 0.08;
+            animation: bolt-pulse 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px var(--pt-orange));
+        }
+
+        .hero-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--pt-orange);
+            animation: particle 2.5s ease-in-out infinite;
+        }
+
+        /* ── Nav active / hover ── */
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: var(--pt-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ── Section utilities ── */
+        .pt-section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--pt-orange-light);
+            color: var(--pt-orange);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .pt-section-tag.blue {
+            background: rgba(0, 62, 111, 0.1);
+            color: var(--pt-navy);
+        }
+
+        .pt-heading {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #111827;
+            line-height: 1.15;
+        }
+
+        .pt-heading .hl {
+            color: var(--pt-orange);
+        }
+
+        .pt-heading .hlb {
+            color: var(--pt-navy);
+        }
+
+        /* ── Service Cards ── */
+        .pt-service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .pt-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pt-navy), var(--pt-orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+
+        .pt-service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 62, 111, 0.12);
+        }
+
+        .pt-service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pt-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--pt-orange-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+            color: var(--pt-orange);
+            transition: all 0.3s;
+        }
+
+        .pt-service-card:hover .pt-icon-box {
+            background: var(--pt-orange);
+            color: white;
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        /* ── Stats Box ── */
+        .pt-stat-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            border-left: 4px solid var(--pt-orange);
+        }
+
+        .pt-stat-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--pt-navy);
+            margin-bottom: 4px;
+        }
+
+        .pt-stat-label {
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+
+        /* ── Client card ── */
+        .pt-client-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            border: 1px solid #e9e9e9;
+        }
+
+        .pt-client-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--pt-orange);
+            box-shadow: 0 8px 24px rgba(227, 114, 32, 0.15);
+        }
+
+        .pt-client-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--pt-orange-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pt-orange);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* ── Why-choose points ── */
+        .pt-why-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .pt-why-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.35rem;
+            color: var(--pt-orange);
+            background: var(--pt-orange-light);
+        }
+
+        .pt-why-point h3 {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+
+        .pt-why-point p {
+            color: #4b5563;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* ── Testimonials ── */
+        .pt-testi-card {
+            background: #f9fafb;
+            border-radius: 16px;
+            padding: 1.75rem;
+            border-top: 3px solid var(--pt-orange);
+        }
+
+        /* ── FAQ ── */
+        .pt-faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .pt-faq-btn {
+            width: 100%;
+            text-align: left;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111827;
+            transition: background 0.2s;
+        }
+
+        .pt-faq-btn:hover {
+            background: #f8f8f8;
+        }
+
+        .pt-faq-icon {
+            font-size: 1.2rem;
+            color: var(--pt-orange);
+            transition: transform 0.3s;
+        }
+
+        .pt-faq-icon.rotate {
+            transform: rotate(45deg);
+        }
+
+        .pt-faq-content {
+            display: none;
+            padding: 0 1.5rem 1.25rem;
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ── Contact CTA ── */
+        .pt-contact-section {
+            background: linear-gradient(135deg, var(--pt-navy) 0%, #005b9f 60%, #003055 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pt-contact-circles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .pt-contact-circles .c1 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            top: -100px;
+            right: -100px;
+        }
+
+        .pt-contact-circles .c2 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            bottom: -60px;
+            left: -60px;
+        }
+
+        /* ── Location Card ── */
+        .pt-location-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 62, 111, 0.15);
+        }
+
+        .pt-location-map {
+            width: 100%;
+            height: 220px;
+            background: #e4e8ef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ── WhatsApp Float ── */
+        .wa-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+            animation: float-up 3s ease-in-out infinite;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.12);
+        }
+
+        .wa-float i {
+            font-size: 1.7rem;
+            color: white;
+        }
+
+        /* ── Footer ── */
+        .pt-footer {
+            background: #0a0f1e;
+        }
+
+        .pt-footer a {
+            transition: color 0.2s;
+        }
+
+        .pt-footer a:hover {
+            color: var(--pt-orange) !important;
+        }
+
+        /* ── Expertise bento ── */
+        .pt-bento-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #ebebeb;
+            transition: all 0.3s;
+        }
+
+        .pt-bento-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 62, 111, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* ── Team card ── */
+        .pt-team-card {
+            background: linear-gradient(135deg, #f8faff, white);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid #eef0f5;
+            transition: all 0.3s;
+        }
+
+        .pt-team-card:hover {
+            box-shadow: 0 12px 32px rgba(0, 62, 111, 0.1);
+            transform: translateY(-6px);
+        }
+
+        .pt-team-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pt-navy), var(--pt-orange));
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* ── Gallery ── */
+        .pt-gallery-item {
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .pt-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .pt-gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .pt-gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 62, 111, 0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+        }
+
+        .pt-gallery-item:hover .pt-gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ── Scrollbar ── */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--pt-navy);
+            border-radius: 3px;
+        }
+
+        /* ── About bg ── */
+        .pt-about-bg {
+            background: linear-gradient(rgba(0, 62, 111, 0.82), rgba(0, 42, 77, 0.88)),
+                url('https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg') center/cover no-repeat;
+            border-radius: 28px;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Glass Navigation Bar -->
-    <nav class="glass-navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="POWERTECH ENGINEERS Logo" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-primary">POWERTECH</span>
-                    <span class="logo-secondary">ENGINEERS</span>
-                </div>
+<body class="bg-gray-50">
+
+    <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl"
+        style="padding-left:6px;padding-right:6px;">
+        <div
+            class="bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl px-5 py-3 flex items-center justify-between rounded-[14px]">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <img src="logo.png" alt="POWERTECH ENGINEERS" class="h-10 object-contain" />
             </div>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+            <!-- Nav -->
+            <nav class="hidden md:flex items-center space-x-7">
+                <a href="#about"
+                    class="nav-link text-gray-700 hover:text-primary transition text-sm font-medium">About</a>
+                <a href="#services"
+                    class="nav-link text-gray-700 hover:text-primary transition text-sm font-medium">Services</a>
+                <a href="#projects"
+                    class="nav-link text-gray-700 hover:text-primary transition text-sm font-medium">Gallery</a>
+                <a href="#clients"
+                    class="nav-link text-gray-700 hover:text-primary transition text-sm font-medium">Clients</a>
+                <a href="#contact"
+                    class="nav-link text-gray-700 hover:text-primary transition text-sm font-medium">Contact</a>
+            </nav>
 
-            <div class="nav-cta">
-    <a href="https://wa.me/919876543210" 
-       target="_blank" 
-       class="btn btn-whatsapp-sm">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp</span>
-    </a>
-        </div>
-    </nav>
+            <!-- CTA -->
+            <a href="mailto:Powerteche@hotmail.com" class="hidden md:block">
+                <button
+                    class="bg-primary text-white px-5 py-2 text-sm font-semibold rounded-lg shadow-sm hover:bg-orange-600 transition-all hover:shadow-md">
+                    Get Quote
+                </button>
+            </a>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-award"></i>
-                    <span>KSEB Licensed • 15+ Years Experience</span>
-                </div>
-
-                <h1 class="hero-title">
-                    <span class="hero-line">Empowering Infrastructure</span>
-                    <span class="hero-line accent">with Precision</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                    Licensed Electrical Contractors in Pune | Vadagaon Budruk
-                </p>
-
-                <p class="hero-description">
-                    We engineer, install, and maintain industrial-grade electrical systems,
-                    solar power plants, and high-voltage solutions for Maharashtra's
-                    infrastructure growth.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Schedule Site Visit</span>
-                    </a>
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-play-circle"></i>
-                        <span>View Our Work</span>
-                    </button>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number" data-count="850">0</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" data-count="15">0</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number" data-count="99.8">0</div>
-                        <div class="stat-label">Safety Record %</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Emergency Support</div>
-                    </div>
-                </div>
-            </div>
+            <!-- Hamburger -->
+            <button id="hamburgerBtn" class="md:hidden flex flex-col justify-between w-6 h-5 hamburger">
+                <span class="hamburger-line line-1"></span>
+                <span class="hamburger-line line-2"></span>
+                <span class="hamburger-line line-3"></span>
+            </button>
         </div>
 
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="md:hidden mt-3 hidden rounded-[12px] bg-white/95 backdrop-blur-lg border border-white/40 shadow-xl px-6 py-6 space-y-4">
+            <a href="#about" class="block text-gray-800 font-medium">About</a>
+            <a href="#services" class="block text-gray-800 font-medium">Services</a>
+            <a href="#projects" class="block text-gray-800 font-medium">Gallery</a>
+            <a href="#clients" class="block text-gray-800 font-medium">Clients</a>
+            <a href="#contact" class="block text-gray-800 font-medium">Contact</a>
+            <a href="mailto:Powerteche@hotmail.com">
+                <button class="w-full bg-primary text-white px-6 py-2.5 text-sm font-semibold rounded-lg">Get
+                    Quote</button>
+            </a>
         </div>
-    </section>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById("hamburgerBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
 
 
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Industrial Electrical Solutions</h2>
-                <p class="section-subtitle">Comprehensive power solutions engineered for reliability and efficiency</p>
-            </div>
-
-            <div class="services-grid" id="servicesGrid">
-                <!-- Service cards will be populated by JavaScript -->
-            </div>
+    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+    <section
+        style="position:relative;min-height:100vh;background:linear-gradient(135deg,#001f3d 0%,#003E6F 50%,#005b9f 100%);overflow:hidden;display:flex;align-items:center;">
+        <!-- Animated grid overlay -->
+        <div
+            style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;z-index:1;">
         </div>
-    </section>
 
-    <!-- Projects Showcase -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Industrial Projects</h2>
-                <p class="section-subtitle">Showcasing our expertise in high-voltage electrical engineering</p>
-            </div>
+        <!-- 3D Electric Bolt SVG background -->
+        <div class="hero-bolt-bg" style="z-index:2;">
+            <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" fill="#E37220">
+                <polygon points="120,10 60,130 110,130 80,310 160,160 105,160" />
+            </svg>
+            <!-- Particles -->
+            <div class="hero-particle" style="top:30%;left:20%;animation-delay:0s;"></div>
+            <div class="hero-particle" style="top:50%;left:75%;animation-delay:0.7s;"></div>
+            <div class="hero-particle" style="top:70%;left:40%;animation-delay:1.4s;"></div>
+            <div class="hero-particle" style="top:25%;left:60%;animation-delay:2.1s;"></div>
+            <div class="hero-particle" style="top:80%;left:80%;animation-delay:0.3s;"></div>
+        </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <button class="btn btn-outline">View Case Study</button>
-                        </div>
+        <!-- Glowing circle -->
+        <div
+            style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(227,114,32,0.15) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;">
+        </div>
+
+        <div style="position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:7rem 1.5rem 3rem;width:100%;">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Badge -->
+                    <div class="scroll-animate"
+                        style="display:inline-flex;align-items:center;gap:8px;background:rgba(227,114,32,0.2);border:1px solid rgba(227,114,32,0.4);color:#ffa84d;padding:8px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;margin-bottom:1.5rem;">
+                        <i class="ri-government-line"></i>
+                        Gov. Lic. Electrical Contractor &amp; Consultant — Lic. No. MHC-36106
                     </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Industrial</span>
-                            <span class="project-tag">11kV</span>
-                            <span class="project-tag">Substation</span>
-                        </div>
-                        <h3 class="project-title">Automotive Plant Power System</h3>
-                        <p class="project-description">
-                            Complete 11kV substation installation with transformer setup 
-                            for automotive manufacturing unit in Chakan.
+
+                    <div class="scroll-animate">
+                        <h1
+                            style="font-family:'Outfit',sans-serif;font-size:clamp(2.4rem,6vw,3.8rem);font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem;">
+                            Powering Pune with<br>
+                            <span style="color:#E37220;text-shadow:0 0 40px rgba(227,114,32,0.5);">Expert
+                                Electrical</span><br>
+                            Solutions
+                        </h1>
+                    </div>
+
+                    <div class="scroll-animate">
+                        <p
+                            style="color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1.7;margin-bottom:2rem;max-width:520px;">
+                            12+ years of excellence in Electrical Installation for commercial &amp; residential projects
+                            across Pune. From Rooftop Solar to EV Charging &amp; MSEDCL Liasoning — we do it all.
                         </p>
-                        <div class="project-meta">
-                            <span><i class="fas fa-calendar"></i> March 2023</span>
-                            <span><i class="fas fa-bolt"></i> 11kV Capacity</span>
+                    </div>
+
+                    <div class="scroll-animate" style="display:flex;gap:1rem;flex-wrap:wrap;">
+                        <a href="#services">
+                            <button
+                                style="background:#E37220;color:white;padding:0.9rem 2rem;border-radius:50px;border:none;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 20px rgba(227,114,32,0.4);"
+                                onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 28px rgba(227,114,32,0.5)'"
+                                onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(227,114,32,0.4)'">
+                                Our Services
+                            </button>
+                        </a>
+                        <a href="https://wa.me/919762328769?text=Hello%20PowerTech%20Engineers%2C%20I%20need%20a%20quote."
+                            target="_blank">
+                            <button
+                                style="background:rgba(255,255,255,0.1);color:white;padding:0.9rem 2rem;border-radius:50px;border:1px solid rgba(255,255,255,0.3);font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(8px);"
+                                onmouseover="this.style.background='rgba(255,255,255,0.18)'"
+                                onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                <i class="ri-whatsapp-line" style="margin-right:6px;"></i> WhatsApp Us
+                            </button>
+                        </a>
+                    </div>
+
+                    <!-- Quick stats -->
+                    <div class="scroll-animate" style="display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;">
+                        <div>
+                            <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#E37220;">
+                                12+</div>
+                            <div style="color:rgba(255,255,255,0.6);font-size:0.85rem;">Years Experience</div>
+                        </div>
+                        <div style="width:1px;background:rgba(255,255,255,0.15);"></div>
+                        <div>
+                            <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#E37220;">
+                                200+</div>
+                            <div style="color:rgba(255,255,255,0.6);font-size:0.85rem;">Projects Done</div>
+                        </div>
+                        <div style="width:1px;background:rgba(255,255,255,0.15);"></div>
+                        <div>
+                            <div style="font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:#E37220;">
+                                50+</div>
+                            <div style="color:rgba(255,255,255,0.6);font-size:0.85rem;">Happy Clients</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <button class="btn btn-outline">View Case Study</button>
+                <!-- Right: 3D Floating Card -->
+                <div class="hidden lg:flex items-center justify-center">
+                    <div style="position:relative;width:360px;height:360px;">
+                        <!-- Glow ring -->
+                        <div
+                            style="position:absolute;inset:-20px;border-radius:50%;border:2px solid rgba(227,114,32,0.3);animation:spin-slow 12s linear infinite;">
+                        </div>
+                        <div
+                            style="position:absolute;inset:-40px;border-radius:50%;border:1px solid rgba(255,255,255,0.08);animation:spin-slow 20s linear infinite reverse;">
+                        </div>
+
+                        <!-- Center card -->
+                        <div
+                            style="position:absolute;inset:0;background:rgba(255,255,255,0.06);backdrop-filter:blur(16px);border-radius:24px;border:1px solid rgba(255,255,255,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;animation:float-up 4s ease-in-out infinite;padding:2rem;">
+                            <img src="logo.png" alt="PowerTech Engineers"
+                                style="height:80px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(227,114,32,0.5));" />
+                            <div style="text-align:center;">
+                                <div
+                                    style="color:white;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.1rem;">
+                                    POWERTECH ENGINEERS</div>
+                                <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;margin-top:4px;">Gov. Lic.
+                                    Electrical Contractor</div>
+                                <div style="color:#E37220;font-size:0.75rem;font-weight:600;margin-top:8px;">MC No.
+                                    36106 | MS No. 51332</div>
+                            </div>
+                            <!-- Icons row -->
+                            <div style="display:flex;gap:1rem;margin-top:0.5rem;">
+                                <div
+                                    style="width:40px;height:40px;border-radius:10px;background:rgba(227,114,32,0.2);display:flex;align-items:center;justify-content:center;color:#E37220;font-size:1.1rem;">
+                                    <i class="ri-sun-line"></i>
+                                </div>
+                                <div
+                                    style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">
+                                    <i class="ri-flashlight-line"></i>
+                                </div>
+                                <div
+                                    style="width:40px;height:40px;border-radius:10px;background:rgba(227,114,32,0.2);display:flex;align-items:center;justify-content:center;color:#E37220;font-size:1.1rem;">
+                                    <i class="ri-charging-pile-2-line"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Commercial</span>
-                            <span class="project-tag">Solar</span>
-                            <span class="project-tag">500kW</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div
+            style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;color:rgba(255,255,255,0.5);font-size:0.8rem;gap:6px;">
+            <i class="ri-arrow-down-line" style="font-size:1.2rem;animation:bounce-y 2s infinite;"></i>
+            <span>Scroll down</span>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ CLIENTS ═══════════════════════════ -->
+    <section id="clients" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 scroll-animate">
+                <div class="pt-section-tag"><i class="ri-building-4-line"></i> Our Valued Clients</div>
+                <h2 class="pt-heading mt-3">Trusted by Leading <span class="hl">Organizations</span></h2>
+                <p class="text-gray-600 mt-3 text-lg max-w-2xl mx-auto">We have proudly served top builders, realtors,
+                    and organizations across Pune.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Client 1 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-building-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">Gold Leaf Realtors</div>
+                        <div class="text-gray-400 text-xs">Real Estate</div>
+                    </div>
+                </div>
+                <!-- Client 2 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-community-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">Kunal Group</div>
+                        <div class="text-gray-400 text-xs">Real Estate</div>
+                    </div>
+                </div>
+                <!-- Client 3 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-home-4-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">S. R. Kulkarni &amp; Realtors</div>
+                        <div class="text-gray-400 text-xs">Real Estate</div>
+                    </div>
+                </div>
+                <!-- Client 4 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-building-2-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">Suvernrekha Builders</div>
+                        <div class="text-gray-400 text-xs">Construction</div>
+                    </div>
+                </div>
+                <!-- Client 5 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-plant-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">Grow India Nirmiti LLP</div>
+                        <div class="text-gray-400 text-xs">Construction</div>
+                    </div>
+                </div>
+                <!-- Client 6 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-hospital-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">Kid's Clinic India Pvt. Ltd.</div>
+                        <div class="text-gray-400 text-xs">Healthcare</div>
+                    </div>
+                </div>
+                <!-- Client 7 -->
+                <div class="pt-client-card scroll-animate">
+                    <div class="pt-client-icon"><i class="ri-pencil-ruler-2-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-gray-800 text-sm">Meta Arch Architect</div>
+                        <div class="text-gray-400 text-xs">Architecture</div>
+                    </div>
+                </div>
+                <!-- Placeholder: You + More -->
+                <div class="pt-client-card scroll-animate"
+                    style="border-style:dashed;border-color:#E37220;background:rgba(227,114,32,0.04);">
+                    <div class="pt-client-icon" style="background:rgba(227,114,32,0.2);"><i
+                            class="ri-add-circle-line"></i></div>
+                    <div>
+                        <div class="font-semibold text-primary text-sm">Your Company</div>
+                        <div class="text-gray-400 text-xs">Be Our Next Client</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="pt-about-bg min-h-[60vh] flex items-center p-8 lg:p-16">
+                <div class="grid lg:grid-cols-2 gap-12 items-center text-white w-full">
+                    <div>
+                        <div class="scroll-animate"
+                            style="display:inline-flex;align-items:center;gap:8px;background:rgba(227,114,32,0.25);color:#ffa84d;padding:6px 16px;border-radius:50px;font-size:0.82rem;font-weight:600;margin-bottom:1.25rem;">
+                            <i class="ri-information-line"></i> About Us
                         </div>
-                        <h3 class="project-title">Shopping Complex Solar Plant</h3>
-                        <p class="project-description">
-                            500kW rooftop solar installation with net metering 
-                            for commercial complex energy optimization.
+                        <h2 class="scroll-animate"
+                            style="font-family:'Outfit',sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1.25rem;line-height:1.15;">
+                            About <span style="color:#E37220;">POWERTECH</span><br>ENGINEERS
+                        </h2>
+                        <p class="scroll-animate"
+                            style="opacity:0.85;line-height:1.8;margin-bottom:1.25rem;font-size:1rem;">
+                            M/S. POWERTECH ENGINEERS is a Government Licensed Electrical Contractor &amp; Consultant
+                            based at <strong>SR. NO. 25/2/1, 'AASAMANT', PANDURANG NAGAR, AMBEGAON PATHAR, PUNE –
+                                411046</strong>.
                         </p>
-                        <div class="project-meta">
-                            <span><i class="fas fa-calendar"></i> January 2024</span>
-                            <span><i class="fas fa-sun"></i> 500kW Solar</span>
+                        <p class="scroll-animate"
+                            style="opacity:0.82;line-height:1.8;margin-bottom:1.5rem;font-size:0.97rem;">
+                            We undertake contracts of Electrical Installation in both commercial and residential
+                            buildings. In business for the last <strong>12 years</strong>, we have accomplished various
+                            tasks for our clients. We assure best quality work using only standard, duly approved
+                            materials and are very competitive in our rates.
+                        </p>
+                        <p class="scroll-animate"
+                            style="opacity:0.8;line-height:1.8;margin-bottom:2rem;font-size:0.97rem;">
+                            We take complete responsibility for coordinating entire installation &amp; Liasoning work
+                            with <strong>MSEDCL &amp; PWD</strong>. Quality is our strength.
+                        </p>
+
+                        <div class="scroll-animate grid grid-cols-2 gap-6 mt-4">
+                            <div>
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#E37220;">
+                                    12+</div>
+                                <div style="font-size:0.85rem;opacity:0.7;">Years Experience</div>
+                            </div>
+                            <div>
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#E37220;">
+                                    200+</div>
+                                <div style="font-size:0.85rem;opacity:0.7;">Projects Completed</div>
+                            </div>
+                            <div>
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#E37220;">
+                                    50+</div>
+                                <div style="font-size:0.85rem;opacity:0.7;">Happy Clients</div>
+                            </div>
+                            <div>
+                                <div
+                                    style="font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800;color:#E37220;">
+                                    100%</div>
+                                <div style="font-size:0.85rem;opacity:0.7;">Quality Assurance</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: License Info Card -->
+                    <div class="hidden lg:block scroll-animate">
+                        <div
+                            style="background:rgba(255,255,255,0.1);backdrop-filter:blur(16px);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,0.2);">
+                            <h3
+                                style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:#E37220;margin-bottom:1.25rem;">
+                                <i class="ri-shield-check-line" style="margin-right:8px;"></i>License &amp; Registration
+                            </h3>
+                            <div style="display:flex;flex-direction:column;gap:0.9rem;">
+                                <div
+                                    style="display:flex;justify-content:space-between;padding:0.75rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+                                    <span style="opacity:0.7;font-size:0.9rem;">MC No.</span><strong>36106</strong>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;padding:0.75rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+                                    <span style="opacity:0.7;font-size:0.9rem;">MS No.</span><strong>51332</strong>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;padding:0.75rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+                                    <span style="opacity:0.7;font-size:0.9rem;">GSTIN</span><strong
+                                        style="font-size:0.85rem;">27AUYPP6134G1Z0</strong>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;padding:0.75rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+                                    <span style="opacity:0.7;font-size:0.9rem;">PAN
+                                        No.</span><strong>AUYPP6134G</strong>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;padding:0.75rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+                                    <span style="opacity:0.7;font-size:0.9rem;">State</span><strong>Maharashtra</strong>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;padding:0.75rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+                                    <span style="opacity:0.7;font-size:0.9rem;">Proprietor</span><strong
+                                        style="font-size:0.88rem;">ROHIT S. PAWAR</strong>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,307 +1041,761 @@
     </section>
 
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2 class="section-title">Engineering Excellence Since 2008</h2>
-                    <p class="about-description">
-                        POWERTECH ENGINEERS combines technical expertise with
-                        industrial-grade execution to deliver reliable power solutions
-                        across Pune and Maharashtra.
+    <!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+    <section id="services" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14 scroll-animate">
+                <div class="pt-section-tag"><i class="ri-tools-line"></i> What We Do</div>
+                <h2 class="pt-heading mt-3">Our <span class="hl">Services</span></h2>
+                <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
+                    Comprehensive electrical engineering services for residential, commercial and industrial needs
+                    across Pune &amp; Maharashtra.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-sun-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Rooftop Solar &amp; Net Metering</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Installation of rooftop solar systems with net
+                        metering setup, connected to MSEDCL grid.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-flashlight-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Electrical Contractor &amp; Consultant</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Gov. Lic. electrical contracting for commercial
+                        &amp; residential buildings. Expert consultation included.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-charging-pile-2-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">EV Charging Station Installation</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Complete installation and commissioning of EV
+                        charging stations for homes, societies and commercial spaces.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-file-list-3-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">MSEDCL Liasoning Work</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">All kinds of MSEDCL liasoning, new connections,
+                        change of name in electricity bill and transformer work.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-base-station-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">H.T. / L.T. Installation</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Complete HT/LT installation, joints, termination
+                        and comprehensive AMC for commercial &amp; industrial complexes.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-plug-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Wiring Contractor</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Complete internal and external wiring works with
+                        all electrical appliances &amp; fittings using approved materials.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-shield-check-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">CCTV &amp; Security Systems</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Supply, installation and maintenance of CCTV
+                        cameras and complete security systems for all premises.</p>
+                </div>
+
+                <div class="pt-service-card scroll-animate">
+                    <div class="pt-icon-box"><i class="ri-water-flash-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Water Purifier &amp; Earthing</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Water purifier sales and service. Earthing &amp;
+                        lightning protection work with street light poles &amp; lighting.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ EXPERTISE BENTO ═══════════════════════════ -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 scroll-animate">
+                <div class="pt-section-tag blue"><i class="ri-star-line"></i> Our Expertise</div>
+                <h2 class="pt-heading mt-3">Built on <span class="hlb">Experience</span> &amp; <span
+                        class="hl">Quality</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+
+                <!-- Large Card -->
+                <div class="md:col-span-5 md:row-span-2 pt-bento-card scroll-animate flex flex-col justify-between"
+                    style="background:linear-gradient(135deg,rgba(0,62,111,0.06),rgba(0,62,111,0.02));border-color:rgba(0,62,111,0.15);">
+                    <div>
+                        <div
+                            style="width:52px;height:52px;border-radius:14px;background:rgba(0,62,111,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.4rem;color:var(--pt-navy);">
+                            <i class="ri-flashlight-line"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-xl mb-3">HT / LT Electrical Works</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Expert High Tension &amp; Low Tension
+                            installations, joints, and terminations for industrial and commercial complexes. Complete
+                            AMC services available.</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm"><span
+                                    class="text-gray-500">Experience:</span><span class="font-semibold">12+ Years</span>
+                            </div>
+                            <div class="flex justify-between text-sm"><span class="text-gray-500">License
+                                    Type:</span><span class="font-semibold">Govt. Licensed</span></div>
+                            <div class="flex justify-between text-sm"><span class="text-gray-500">Coverage:</span><span
+                                    class="font-semibold">Pune &amp; Maharashtra</span></div>
+                        </div>
+                    </div>
+                    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="HT LT Electrical" class="rounded-xl object-cover w-full mt-4" style="height:160px;" />
+                </div>
+
+                <!-- Rooftop Solar -->
+                <div class="md:col-span-4 pt-bento-card scroll-animate">
+                    <div
+                        style="width:44px;height:44px;border-radius:12px;background:rgba(227,114,32,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;font-size:1.2rem;color:var(--pt-orange);">
+                        <i class="ri-sun-line"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Rooftop Solar</h3>
+                    <p class="text-gray-500 text-sm mb-3">Solar panels, net metering &amp; grid connectivity for homes
+                        and businesses.</p>
+                    <img src="https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Rooftop Solar" class="rounded-lg object-cover w-full" style="height:80px;" />
+                </div>
+
+                <!-- EV Charging -->
+                <div class="md:col-span-3 pt-bento-card scroll-animate">
+                    <div
+                        style="width:44px;height:44px;border-radius:12px;background:rgba(0,62,111,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;font-size:1.2rem;color:var(--pt-navy);">
+                        <i class="ri-charging-pile-2-line"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">EV Charging</h3>
+                    <p class="text-gray-500 text-sm">EV station installation for societies, offices &amp; homes.</p>
+                </div>
+
+                <!-- MSEDCL -->
+                <div class="md:col-span-4 pt-bento-card scroll-animate">
+                    <div
+                        style="width:44px;height:44px;border-radius:12px;background:rgba(227,114,32,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;font-size:1.2rem;color:var(--pt-orange);">
+                        <i class="ri-government-line"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">MSEDCL Liasoning</h3>
+                    <p class="text-gray-500 text-sm">New connections, transformer work, name changes &amp; all official
+                        liasoning with MSEDCL &amp; PWD.</p>
+                    <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        alt="Electrical Panel" class="rounded-lg object-cover w-full mt-3" style="height:70px;" />
+                </div>
+
+                <!-- CCTV -->
+                <div class="md:col-span-3 pt-bento-card scroll-animate">
+                    <div
+                        style="width:44px;height:44px;border-radius:12px;background:rgba(0,62,111,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;font-size:1.2rem;color:var(--pt-navy);">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">CCTV Security</h3>
+                    <p class="text-gray-500 text-sm">Complete surveillance solutions for all types of properties.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ WHY CHOOSE US ═══════════════════════════ -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
+                <div class="scroll-animate">
+                    <div class="pt-section-tag"><i class="ri-award-line"></i> Why Choose Us</div>
+                    <h2 class="pt-heading mt-3 mb-8">Why Choose<br><span class="hlb">POWERTECH</span> <span
+                            class="hl">ENGINEERS?</span></h2>
+
+                    <div class="pt-why-point">
+                        <div class="pt-why-icon"><i class="ri-government-line"></i></div>
+                        <div>
+                            <h3>Government Licensed Contractor</h3>
+                            <p>Fully licensed by Maharashtra Government with MC No. 36106 &amp; MS No. 51332. Compliant,
+                                certified, and trusted.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-why-point">
+                        <div class="pt-why-icon"><i class="ri-time-line"></i></div>
+                        <div>
+                            <h3>12+ Years of Proven Experience</h3>
+                            <p>Over a decade serving Pune's leading builders, realtors, and industrial clients with
+                                excellence and reliability.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-why-point">
+                        <div class="pt-why-icon"><i class="ri-trophy-line"></i></div>
+                        <div>
+                            <h3>Competitive Rates &amp; Premium Quality</h3>
+                            <p>We use only standard, duly approved materials while maintaining very competitive pricing.
+                                Quality is our strength.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-why-point">
+                        <div class="pt-why-icon"><i class="ri-team-line"></i></div>
+                        <div>
+                            <h3>End-to-End Responsibility</h3>
+                            <p>Complete responsibility from design to installation &amp; liasoning with MSEDCL &amp;
+                                PWD. One point of contact for all your needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats grid -->
+                <div class="grid grid-cols-2 gap-5 scroll-animate">
+                    <div class="pt-stat-box">
+                        <div class="pt-stat-num">12+</div>
+                        <div class="pt-stat-label">Years Experience</div>
+                    </div>
+                    <div class="pt-stat-box">
+                        <div class="pt-stat-num">200+</div>
+                        <div class="pt-stat-label">Projects Completed</div>
+                    </div>
+                    <div class="pt-stat-box">
+                        <div class="pt-stat-num">98%</div>
+                        <div class="pt-stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="pt-stat-box">
+                        <div class="pt-stat-num">50+</div>
+                        <div class="pt-stat-label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ PROPRIETOR / TEAM ═══════════════════════════ -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 scroll-animate">
+                <div class="pt-section-tag blue"><i class="ri-user-star-line"></i> Leadership</div>
+                <h2 class="pt-heading mt-3">Meet the <span class="hl">Proprietor</span></h2>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="pt-team-card scroll-animate">
+                    <div class="pt-team-avatar"><i class="ri-user-3-line"></i></div>
+                    <h3 class="font-bold text-gray-900 text-xl mb-1">ROHIT SURYAKANT PAWAR</h3>
+                    <p class="font-semibold mb-1" style="color:var(--pt-orange);">Proprietor</p>
+                    <p class="text-gray-500 text-sm mb-4">Gov. Lic. Electrical Contractor &amp; Consultant</p>
+                    <div class="grid grid-cols-2 gap-3 text-sm w-full mt-2">
+                        <div style="background:#f8f9fa;border-radius:10px;padding:0.75rem;text-align:center;">
+                            <div class="font-semibold text-gray-800">MC No.</div>
+                            <div style="color:var(--pt-navy);">36106</div>
+                        </div>
+                        <div style="background:#f8f9fa;border-radius:10px;padding:0.75rem;text-align:center;">
+                            <div class="font-semibold text-gray-800">MS No.</div>
+                            <div style="color:var(--pt-navy);">51332</div>
+                        </div>
+                        <div style="background:#f8f9fa;border-radius:10px;padding:0.75rem;text-align:center;">
+                            <div class="font-semibold text-gray-800">GSTIN</div>
+                            <div style="color:var(--pt-navy);font-size:0.78rem;">27AUYPP6134G1Z0</div>
+                        </div>
+                        <div style="background:#f8f9fa;border-radius:10px;padding:0.75rem;text-align:center;">
+                            <div class="font-semibold text-gray-800">PAN</div>
+                            <div style="color:var(--pt-navy);">AUYPP6134G</div>
+                        </div>
+                    </div>
+                    <!-- Contact buttons -->
+                    <div class="flex gap-3 mt-5">
+                        <a href="tel:9762328769"
+                            style="flex:1;background:var(--pt-navy);color:white;padding:0.7rem;border-radius:10px;text-align:center;text-decoration:none;font-size:0.9rem;font-weight:600;">
+                            <i class="ri-phone-line" style="margin-right:5px;"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/919762328769?text=Hello%20Rohit%20ji%2C%20I%20need%20electrical%20services."
+                            target="_blank"
+                            style="flex:1;background:#25D366;color:white;padding:0.7rem;border-radius:10px;text-align:center;text-decoration:none;font-size:0.9rem;font-weight:600;">
+                            <i class="ri-whatsapp-line" style="margin-right:5px;"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ GALLERY ═══════════════════════════ -->
+    <section id="projects" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 scroll-animate">
+                <div class="pt-section-tag"><i class="ri-image-line"></i> Our Work</div>
+                <h2 class="pt-heading mt-3">Project <span class="hl">Gallery</span></h2>
+                <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">Showcasing our successful electrical
+                    installations across Pune.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="pt-gallery-item cursor-pointer w-full scroll-animate" style="aspect-ratio:1;">
+                    <img src="https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Rooftop Solar Installation" />
+                    <div class="pt-gallery-overlay"><span class="text-white font-semibold text-sm">Rooftop Solar
+                            Installation</span></div>
+                </div>
+                <div class="pt-gallery-item cursor-pointer w-full scroll-animate" style="aspect-ratio:1;">
+                    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Electrical Panel Work" />
+                    <div class="pt-gallery-overlay"><span class="text-white font-semibold text-sm">Electrical Panel
+                            Installation</span></div>
+                </div>
+                <div class="pt-gallery-item cursor-pointer w-full scroll-animate" style="aspect-ratio:1;">
+                    <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="HT LT Installation" />
+                    <div class="pt-gallery-overlay"><span class="text-white font-semibold text-sm">HT / LT
+                            Installation</span></div>
+                </div>
+                <div class="pt-gallery-item cursor-pointer w-full scroll-animate" style="aspect-ratio:1;">
+                    <img src="https://images.pexels.com/photos/159397/solar-panel-array-power-sun-159397.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Solar Array" />
+                    <div class="pt-gallery-overlay"><span class="text-white font-semibold text-sm">Commercial Solar
+                            Array</span></div>
+                </div>
+                <div class="pt-gallery-item cursor-pointer w-full scroll-animate" style="aspect-ratio:1;">
+                    <img src="https://images.pexels.com/photos/110844/pexels-photo-110844.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="EV Charging Station" />
+                    <div class="pt-gallery-overlay"><span class="text-white font-semibold text-sm">EV Charging
+                            Station</span></div>
+                </div>
+                <div class="pt-gallery-item cursor-pointer w-full scroll-animate" style="aspect-ratio:1;">
+                    <img src="https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Building Wiring" />
+                    <div class="pt-gallery-overlay"><span class="text-white font-semibold text-sm">Commercial Wiring
+                            Works</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ TESTIMONIALS ═══════════════════════════ -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 scroll-animate">
+                <div class="pt-section-tag blue"><i class="ri-chat-quote-line"></i> Testimonials</div>
+                <h2 class="pt-heading mt-3">What Our <span class="hl">Clients Say</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="pt-testi-card scroll-animate">
+                    <div style="color:#facc15;margin-bottom:0.75rem;font-size:1rem;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 text-sm leading-relaxed">"PowerTech Engineers did an excellent
+                        job with the electrical installation in our residential project. Very professional and completed
+                        on time."</p>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Gold Leaf Realtors</h4>
+                        <p class="text-xs text-gray-400">Real Estate, Pune</p>
+                    </div>
+                </div>
+
+                <div class="pt-testi-card scroll-animate">
+                    <div style="color:#facc15;margin-bottom:0.75rem;font-size:1rem;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 text-sm leading-relaxed">"We hired PowerTech for MSEDCL
+                        liasoning and complete HT/LT works. They handled everything seamlessly. Highly recommended!"</p>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Kunal Group</h4>
+                        <p class="text-xs text-gray-400">Real Estate, Pune</p>
+                    </div>
+                </div>
+
+                <div class="pt-testi-card scroll-animate">
+                    <div style="color:#facc15;margin-bottom:0.75rem;font-size:1rem;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 text-sm leading-relaxed">"The rooftop solar installation by
+                        PowerTech was outstanding. Quality materials, great rates, and professional workmanship."</p>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Grow India Nirmiti LLP</h4>
+                        <p class="text-xs text-gray-400">Construction, Pune</p>
+                    </div>
+                </div>
+
+                <div class="pt-testi-card scroll-animate">
+                    <div style="color:#facc15;margin-bottom:0.75rem;font-size:1rem;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 text-sm leading-relaxed">"Excellent CCTV and security system
+                        installation. Very responsive team and competitive pricing."</p>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Kid's Clinic India Pvt. Ltd.</h4>
+                        <p class="text-xs text-gray-400">Healthcare, Pune</p>
+                    </div>
+                </div>
+
+                <div class="pt-testi-card scroll-animate">
+                    <div style="color:#facc15;margin-bottom:0.75rem;font-size:1rem;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 text-sm leading-relaxed">"PowerTech handled our complete EV
+                        charging station setup. Very knowledgeable team, smooth execution from start to finish."</p>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Meta Arch Architect</h4>
+                        <p class="text-xs text-gray-400">Architecture, Pune</p>
+                    </div>
+                </div>
+
+                <div class="pt-testi-card scroll-animate">
+                    <div style="color:#facc15;margin-bottom:0.75rem;font-size:1rem;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 text-sm leading-relaxed">"We rely on PowerTech for all our
+                        electrical needs. 12 years of experience really shows in the quality and speed of work."</p>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Suvernrekha Builders</h4>
+                        <p class="text-xs text-gray-400">Construction, Pune</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
+    <section id="learn" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 scroll-animate">
+                <div class="pt-section-tag"><i class="ri-question-line"></i> FAQ</div>
+                <h2 class="pt-heading mt-3">Frequently Asked <span class="hl">Questions</span></h2>
+                <p class="text-gray-600 mt-3">Answers to common questions about our electrical services.</p>
+            </div>
+
+            <div class="scroll-animate">
+                <div class="pt-faq-item">
+                    <button class="pt-faq-btn" data-target="faq1"><span>Are you a Government Licensed Electrical
+                            Contractor?</span><i class="ri-add-line pt-faq-icon"></i></button>
+                    <div id="faq1" class="pt-faq-content">Yes. POWERTECH ENGINEERS holds a Government of Maharashtra
+                        Electrical Contractor License. MC No. 36106 &amp; MS No. 51332. We are fully compliant with all
+                        regulations.</div>
+                </div>
+                <div class="pt-faq-item">
+                    <button class="pt-faq-btn" data-target="faq2"><span>What areas do you serve?</span><i
+                            class="ri-add-line pt-faq-icon"></i></button>
+                    <div id="faq2" class="pt-faq-content">We are based in Pandurang Nagar, Ambegaon BK, Pune – 411046,
+                        and serve Pune city and surrounding Maharashtra areas for all electrical works.</div>
+                </div>
+                <div class="pt-faq-item">
+                    <button class="pt-faq-btn" data-target="faq3"><span>Do you handle MSEDCL Liasoning work?</span><i
+                            class="ri-add-line pt-faq-icon"></i></button>
+                    <div id="faq3" class="pt-faq-content">Yes. We handle all kinds of MSEDCL liasoning work including
+                        new connections, change of name in electricity bill, transformer work, and complete coordination
+                        with MSEDCL &amp; PWD.</div>
+                </div>
+                <div class="pt-faq-item">
+                    <button class="pt-faq-btn" data-target="faq4"><span>Do you install Rooftop Solar with Net
+                            Metering?</span><i class="ri-add-line pt-faq-icon"></i></button>
+                    <div id="faq4" class="pt-faq-content">Absolutely. We install complete rooftop solar systems
+                        including solar panels, inverters, net metering setup, and grid connectivity through MSEDCL for
+                        both residential and commercial properties.</div>
+                </div>
+                <div class="pt-faq-item">
+                    <button class="pt-faq-btn" data-target="faq5"><span>Can you install EV Charging Stations?</span><i
+                            class="ri-add-line pt-faq-icon"></i></button>
+                    <div id="faq5" class="pt-faq-content">Yes. We specialize in EV charging station installation for
+                        housing societies, commercial spaces, and individual homes with proper wiring, load balancing,
+                        and safety compliance.</div>
+                </div>
+                <div class="pt-faq-item">
+                    <button class="pt-faq-btn" data-target="faq6"><span>What is your payment and quotation
+                            process?</span><i class="ri-add-line pt-faq-icon"></i></button>
+                    <div id="faq6" class="pt-faq-content">Contact us via phone, email, or WhatsApp to describe your
+                        requirement. We will visit the site, assess the work scope, and provide a detailed, competitive
+                        quotation. We accept bank transfers. Bank: Bank of Maharashtra, Dhankwadi, Pune — IFSC:
+                        MAHB0000776.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════ CONTACT CTA ═══════════════════════════ -->
+    <section id="contact" class="pt-contact-section py-20 px-4">
+        <div class="pt-contact-circles">
+            <div class="c1"></div>
+            <div class="c2"></div>
+        </div>
+        <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Left: CTA text -->
+                <div class="text-white scroll-animate">
+                    <div
+                        style="display:inline-flex;align-items:center;gap:8px;background:rgba(227,114,32,0.25);border:1px solid rgba(227,114,32,0.4);color:#ffa84d;padding:6px 16px;border-radius:50px;font-size:0.82rem;font-weight:600;margin-bottom:1.25rem;">
+                        <i class="ri-flashlight-line"></i> Ready to Power Your Project?
+                    </div>
+                    <h2
+                        style="font-family:'Outfit',sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;line-height:1.15;margin-bottom:1.25rem;">
+                        Let's Build Something<br><span style="color:#E37220;">Great Together</span>
+                    </h2>
+                    <p style="opacity:0.85;line-height:1.7;margin-bottom:2rem;font-size:1rem;max-width:460px;">
+                        Contact us for a free quote on electrical installation, solar systems, EV charging, MSEDCL
+                        liasoning, or any other electrical work in Pune.
                     </p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4>Safety First</h4>
-                                <p>ISO 9001 certified safety protocols</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-file-contract"></i>
-                            <div>
-                                <h4>Full Compliance</h4>
-                                <p>KSEB & KSEI approved contractors</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Expert Team</h4>
-                                <p>Licensed electrical engineers</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="certificate-card">
-                        <i class="fas fa-award"></i>
-                        <h3>Certifications & Licenses</h3>
-                        <ul class="certificate-list">
-                            <li>Class A Electrical License</li>
-                            <li>KSEB Authorized Contractor</li>
-                            <li>ISO 9001:2015 Certified</li>
-                            <li>MNRE Approved Solar Installer</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2 class="section-title">Contact Our Engineers</h2>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Office Address</h4>
-                                <address>
-                                    48/3/C/24/B5, Dhabadi,<br>
-                                    Vadagaon Budruk,<br>
-                                    Pune, Maharashtra 411041
-                                </address>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h4>Contact Numbers</h4>
-                                <p>General: +91 98901 69667</p>
-                                <p>Emergency: +91 98901 69667</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email Address</h4>
-                                <p>sagarpawar001@gmail.com</p>
-                            </div>
-                        </div>
+                    <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                        <a href="mailto:Powerteche@hotmail.com"
+                            style="background:#E37220;color:white;padding:0.9rem 2rem;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                            <i class="ri-mail-line"></i> Email Us
+                        </a>
+                        <a href="https://wa.me/919762328769?text=Hello%20PowerTech%20Engineers%2C%20I%20need%20a%20free%20quote%20for%20electrical%20work."
+                            target="_blank"
+                            style="background:rgba(255,255,255,0.1);color:white;padding:0.9rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(255,255,255,0.3);display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(8px);transition:all 0.3s;"
+                            onmouseover="this.style.background='rgba(255,255,255,0.18)'"
+                            onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="ri-whatsapp-line"></i> WhatsApp Us
+                        </a>
                     </div>
                 </div>
 
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <h3>Request Technical Proposal</h3>
-
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service">Service Required *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select service</option>
-                                <option value="solar">Solar Power Plant</option>
-                                <option value="industrial">Industrial Wiring</option>
-                                <option value="liaisoning">KSEB Liaisoning</option>
-                                <option value="substation">Substation Setup</option>
-                                <option value="other">Other Electrical Service</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="4"
-                                placeholder="Briefly describe your electrical requirement..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Request
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Add this section after the Contact section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Location</h2>
-                <p class="section-subtitle">Visit our office in Vadagaon Budruk, Pune</p>
-            </div>
-
-            <div class="map-container">
-                <!-- Google Maps Embed -->
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1887.654321!2d73.818456!3d18.463210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzQ3LjYiTiA3M8KwNDknMDYuNSJF!5e0!3m2!1sen!2sin!4v1628234567890!5m2!1sen!2sin"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-
-                    <div class="map-info-card">
-                        <div class="map-info-header">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Office Address</h3>
-                        </div>
-                        <div class="map-info-body">
-                            <p><strong>POWERTECH ENGINEERS</strong></p>
-                            <p>48/3/C/24/B5,</p>
-                            <p>Vadagaon Budruk,</p>
-                            <p>Pune, Maharashtra 411041</p>
-
-                            <div class="map-actions">
-                                <a href="https://maps.app.goo.gl/K4xgPGHhc5pUvqYv7" target="_blank" class="btn btn-map">
-                                    <i class="fas fa-directions"></i>
-                                    Get Directions
+                <!-- Right: Location Card with WhatsApp -->
+                <div class="scroll-animate">
+                    <div class="pt-location-card">
+                        <!-- Map placeholder with WhatsApp CTA -->
+                        <div class="pt-location-map" style="background:linear-gradient(135deg,#e8eef5,#d4e0ec);">
+                            <div style="text-align:center;padding:1.5rem;">
+                                <div
+                                    style="width:70px;height:70px;border-radius:50%;background:var(--pt-navy);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem;color:white;">
+                                    <i class="ri-map-pin-2-fill"></i>
+                                </div>
+                                <div style="font-weight:700;color:var(--pt-navy);font-size:1rem;">PANDURANG NAGAR, PUNE
+                                </div>
+                                <div style="color:#555;font-size:0.83rem;margin-top:4px;">SR.NO.25/2/1, AASAMANT,
+                                    Ambegaon BK – 411046</div>
+                                <!-- Direct WhatsApp Message for Location -->
+                                <a href="https://wa.me/919762328769?text=Hi%20PowerTech%20Engineers%2C%20I%20found%20your%20location%20and%20I%20need%20electrical%20services."
+                                    target="_blank"
+                                    style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;background:#25D366;color:white;padding:0.6rem 1.4rem;border-radius:50px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.2s;"
+                                    onmouseover="this.style.transform='scale(1.05)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                                    <i class="ri-whatsapp-line"></i> Message on WhatsApp
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Side Drawer Modal -->
-    <div class="side-drawer" id="sideDrawer">
-        <div class="drawer-overlay" id="drawerOverlay"></div>
-        <div class="drawer-content">
-            <div class="drawer-header">
-                <h3 class="drawer-title" id="drawerTitle">Service Details</h3>
-                <button class="drawer-close" id="drawerClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="drawer-body" id="drawerBody">
-                <!-- Content loaded dynamically -->
-            </div>
-            <div class="drawer-footer">
-                <button class="btn btn-primary" id="drawerQuoteBtn">
-                    <i class="fas fa-bolt"></i>
-                    Request Quote for this Service
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- PowerBot Chat Widget -->
-    <div class="chatbot-container">
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <div class="chatbot-avatar">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <div>
-                    <h4>PowerBot Assistant</h4>
-                    <p>Electrical Support 24/7</p>
-                </div>
-                <button class="chatbot-close" id="chatbotClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="chatbot-body" id="chatbotBody">
-                <div class="chat-message bot">
-                    <p>Welcome to POWERTECH ENGINEERS! ⚡</p>
-                    <p>Do you need a <strong>Commercial Quote</strong> or have an electrical emergency?</p>
-                </div>
-                <div class="chat-options">
-                    <button class="chat-option" data-option="quote">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Get Commercial Quote</span>
-                    </button>
-                    <button class="chat-option" data-option="emergency">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>Emergency Support</span>
-                    </button>
-                    <button class="chat-option" data-option="solar">
-                        <i class="fas fa-solar-panel"></i>
-                        <span>Solar Consultation</span>
-                    </button>
-                </div>
-            </div>
-            <div class="chatbot-footer" style="display:none">
-                <!-- Chat input disabled -->
-            </div>
-        </div>
-
-        <button class="chatbot-toggle" id="chatbotToggle">
-            <i class="fas fa-comment-dots"></i>
-        </button>
-    </div>
-
-    <!-- Emergency FAB -->
-    <a href="tel:+919890169667" class="emergency-fab" id="emergencyFab">
-        <div class="fab-pulse"></div>
-        <i class="fas fa-phone-alt"></i>
-        <span class="fab-text">Emergency</span>
-    </a>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="POWERTECH ENGINEERS" class="logo-img">
-                        <div class="logo-text">
-                            <span class="logo-primary">POWERTECH</span>
-                            <span class="logo-secondary">ENGINEERS</span>
+                        <!-- Contact details -->
+                        <div style="padding:1.5rem;">
+                            <div style="display:flex;flex-direction:column;gap:0.85rem;">
+                                <div style="display:flex;align-items:flex-start;gap:12px;">
+                                    <div
+                                        style="width:38px;height:38px;border-radius:9px;background:rgba(0,62,111,0.08);display:flex;align-items:center;justify-content:center;color:var(--pt-navy);font-size:1rem;flex-shrink:0;">
+                                        <i class="ri-map-pin-line"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight:600;color:#111827;font-size:0.9rem;">Address</div>
+                                        <div style="color:#6b7280;font-size:0.82rem;line-height:1.5;">SR.NO.25/2/1,
+                                            'AASAMANT', PANDURANG NAGAR,<br>Ambegaon BK, PUNE – 411046, Maharashtra
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div
+                                        style="width:38px;height:38px;border-radius:9px;background:rgba(0,62,111,0.08);display:flex;align-items:center;justify-content:center;color:var(--pt-navy);font-size:1rem;flex-shrink:0;">
+                                        <i class="ri-phone-line"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight:600;color:#111827;font-size:0.9rem;">Mobile</div>
+                                        <a href="tel:9762328769"
+                                            style="color:#6b7280;font-size:0.85rem;text-decoration:none;">+91
+                                            9762328769</a>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div
+                                        style="width:38px;height:38px;border-radius:9px;background:rgba(0,62,111,0.08);display:flex;align-items:center;justify-content:center;color:var(--pt-navy);font-size:1rem;flex-shrink:0;">
+                                        <i class="ri-mail-line"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight:600;color:#111827;font-size:0.9rem;">Email</div>
+                                        <a href="mailto:Powerteche@hotmail.com"
+                                            style="color:#6b7280;font-size:0.85rem;text-decoration:none;">Powerteche@hotmail.com</a>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div
+                                        style="width:38px;height:38px;border-radius:9px;background:rgba(0,62,111,0.08);display:flex;align-items:center;justify-content:center;color:var(--pt-navy);font-size:1rem;flex-shrink:0;">
+                                        <i class="ri-shield-check-line"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight:600;color:#111827;font-size:0.9rem;">GST No.</div>
+                                        <div style="color:#6b7280;font-size:0.82rem;">27AUYPP6134G1Z0</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <p class="footer-description">
-                        Licensed electrical contractors providing industrial-grade
-                        power solutions across Pune and Maharashtra.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <!-- Decorative icons -->
+        <div style="position:absolute;top:2rem;right:2rem;opacity:0.1;font-size:6rem;color:white;z-index:1;"><i
+                class="ri-flashlight-line"></i></div>
+        <div style="position:absolute;bottom:2rem;left:2rem;opacity:0.07;font-size:4rem;color:white;z-index:1;"><i
+                class="ri-sun-line"></i></div>
+    </section>
+
+
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer class="pt-footer py-14 px-4 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-10 mb-10">
+
+                <!-- Brand -->
+                <div>
+                    <img src="logo.png" alt="POWERTECH ENGINEERS" class="h-12 mb-5 object-contain"
+                        style="filter:brightness(0) invert(1);" />
+                    <div style="color:#9ca3af;font-size:0.88rem;line-height:1.8;margin-bottom:1.25rem;">
+                        <p style="font-weight:600;color:#d1d5db;margin-bottom:4px;">POWERTECH ENGINEERS</p>
+                        <p>SR. NO. 25/2/1 'AASAMANT'<br>PANDURANG NAGAR, AMBEGAON BK<br>PUNE – 411046, Maharashtra</p>
+                        <p style="margin-top:8px;">Ph: <a href="tel:9762328769" style="color:#9ca3af;">+91
+                                9762328769</a></p>
+                        <p>Email: <a href="mailto:Powerteche@hotmail.com"
+                                style="color:#9ca3af;">Powerteche@hotmail.com</a></p>
+                    </div>
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://wa.me/919762328769" target="_blank"
+                            style="width:40px;height:40px;background:#1e293b;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#9ca3af;text-decoration:none;">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                        <a href="mailto:Powerteche@hotmail.com"
+                            style="width:40px;height:40px;background:#1e293b;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#9ca3af;text-decoration:none;">
+                            <i class="ri-mail-line"></i>
+                        </a>
+                        <a href="tel:9762328769"
+                            style="width:40px;height:40px;background:#1e293b;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#9ca3af;text-decoration:none;">
+                            <i class="ri-phone-line"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;color:white;">Quick Links</h3>
+                    <ul style="display:flex;flex-direction:column;gap:0.6rem;">
+                        <li><a href="#about" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">About Us</a>
+                        </li>
+                        <li><a href="#services" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Our
+                                Services</a></li>
+                        <li><a href="#projects" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Gallery</a>
+                        </li>
+                        <li><a href="#clients" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Clients</a>
+                        </li>
+                        <li><a href="#contact" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Contact</a>
+                        </li>
+                        <li><a href="https://wa.me/919762328769" target="_blank"
+                                style="color:#9ca3af;text-decoration:none;font-size:0.9rem;"><i class="ri-whatsapp-line"
+                                    style="margin-right:4px;"></i>WhatsApp</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services" data-service="solar">Solar Power Plants</a></li>
-                        <li><a href="#services" data-service="industrial">Industrial Wiring</a></li>
-                        <li><a href="#services" data-service="liaisoning">KSEB Liaisoning</a></li>
-                        <li><a href="#services" data-service="substation">Substation Setup</a></li>
-                    </ul>
+                <!-- Registrations -->
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;color:white;">Registrations &amp;
+                        Lic.</h3>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+                        <div style="background:#1e293b;padding:0.85rem;border-radius:12px;text-align:center;">
+                            <i class="ri-government-line"
+                                style="font-size:1.4rem;color:var(--pt-orange);display:block;margin-bottom:4px;"></i>
+                            <div style="font-size:0.72rem;color:#9ca3af;">MC No.</div>
+                            <div style="font-size:0.85rem;color:white;font-weight:600;">36106</div>
+                        </div>
+                        <div style="background:#1e293b;padding:0.85rem;border-radius:12px;text-align:center;">
+                            <i class="ri-award-line"
+                                style="font-size:1.4rem;color:var(--pt-orange);display:block;margin-bottom:4px;"></i>
+                            <div style="font-size:0.72rem;color:#9ca3af;">MS No.</div>
+                            <div style="font-size:0.85rem;color:white;font-weight:600;">51332</div>
+                        </div>
+                        <div style="background:#1e293b;padding:0.85rem;border-radius:12px;text-align:center;">
+                            <i class="ri-file-list-3-line"
+                                style="font-size:1.4rem;color:var(--pt-orange);display:block;margin-bottom:4px;"></i>
+                            <div style="font-size:0.72rem;color:#9ca3af;">GSTIN</div>
+                            <div style="font-size:0.72rem;color:white;font-weight:600;">27AUYPP6134G1Z0</div>
+                        </div>
+                        <div style="background:#1e293b;padding:0.85rem;border-radius:12px;text-align:center;">
+                            <i class="ri-id-card-line"
+                                style="font-size:1.4rem;color:var(--pt-orange);display:block;margin-bottom:4px;"></i>
+                            <div style="font-size:0.72rem;color:#9ca3af;">PAN</div>
+                            <div style="font-size:0.85rem;color:white;font-weight:600;">AUYPP6134G</div>
+                        </div>
+                    </div>
                 </div>
-
 
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 POWERTECH ENGINEERS. All rights reserved.</p>
-                <p class="footer-address">
-                    48/3/C/24/B5, Dhabadi, Vadagaon Budruk, Pune, Maharashtra 411041
-                </p>
+            <div
+                style="border-top:1px solid #1e293b;padding-top:2rem;text-align:center;color:#6b7280;font-size:0.85rem;">
+                &copy; 2025 POWERTECH ENGINEERS. All rights reserved. | Designed by <a href="tel:7972571540"
+                    style="color:#6b7280;font-size:0.85rem;text-decoration:none;">+91 7972571540</a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+
+    <!-- ═══════════════════════════ WHATSAPP FLOAT BUTTON ═══════════════════════════ -->
+    <a href="https://wa.me/919762328769?text=Hello%20PowerTech%20Engineers%2C%20I%20need%20electrical%20services."
+        target="_blank" class="wa-float" title="Chat on WhatsApp">
+        <i class="ri-whatsapp-line"></i>
+    </a>
+
+
+    <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
+    <script id="scroll-animations">
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) { entry.target.classList.add('active'); }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.scroll-animate').forEach(el => { observer.observe(el); });
+        });
+    </script>
+
+    <script id="faq-functionality">
+        document.querySelectorAll('.pt-faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const icon = button.querySelector('.pt-faq-icon');
+                const isOpen = content.style.display === 'block';
+                document.querySelectorAll('.pt-faq-content').forEach(c => c.style.display = 'none');
+                document.querySelectorAll('.pt-faq-icon').forEach(i => i.classList.remove('rotate'));
+                if (!isOpen) {
+                    content.style.display = 'block';
+                    icon.classList.add('rotate');
+                }
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
